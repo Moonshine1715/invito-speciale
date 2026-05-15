@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Invito Speciale ⚽</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Qui potrai inserire l'URL di una foto dello stadio */
+            background: linear-gradient(rgba(0, 132, 190, 0.7), rgba(0, 132, 190, 0.7)), 
+                        url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn-si {
+            background-color: #ffffff;
+            color: #0084be;
+        }
+
+        .btn-no {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sei invitata ufficialmente allo stadio per Napoli-Udinese</h1>
+        <p>Ho già bloccato due biglietti solo per noi... 🏟️💙</p>
+        <p><strong>Ci vieni con me?</strong></p>
+        
+        <div class="buttons">
+            <a href="dati.html" class="btn btn-si">SÌ! 😍</a>
+            <button class="btn btn-no" onclick="alert('Riprova, sarai più fortunata! 😉')">No 😢</button>
+        </div>
+    </div>
+
+</body>
+</html>

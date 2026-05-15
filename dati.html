@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci i tuoi dati 🏟️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0084be; /* Azzurro Napoli */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #0084be;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .istruzioni {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn-invia {
+            width: 100%;
+            padding: 12px;
+            background-color: #0084be;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-weight: bold;
+        }
+
+        .btn-invia:hover {
+            background-color: #005f8a;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Quasi fatto! 🏟️💙</h2>
+        <p class="istruzioni">Per confermare i posti e attivare i biglietti nominali, inserisci i dati del tuo documento:</p>
+        
+<form id="formStadio" onsubmit="inviaAWhatsApp(event)">
+    <label for="nome">Nome Completo</label>
+    <input type="text" id="nome" placeholder="Es. Maria Rossi" required>
+
+    <label for="nascita">Data di Nascita</label>
+    <input type="text" id="nascita" placeholder="GG/MM/AAAA" required>
+
+    <label for="documento">Numero Carta d'Identità</label>
+    <input type="text" id="documento" placeholder="Es. CA12345AS" required>
+
+    <button type="submit" class="btn-invia" style="background-color: #25D366;">Conferma e Invia su WhatsApp 📱</button>
+</form>
+
+<script>
+function inviaAWhatsApp(event) {
+    event.preventDefault(); // Impedisce alla pagina di ricaricarsi
+    
+    // Recupera i dati inseriti nei campi
+    const nome = document.getElementById('nome').value;
+    const nascita = document.getElementById('nascita').value;
+    const documento = document.getElementById('documento').value;
+    
+    // Inserisci il TUO numero di telefono qui sotto (scrivilo tutto attaccato, es: 3331234567)
+    const tuoNumero = "393381259259"; 
+    
+    // Costruisce il testo del messaggio
+    const testo = `Ciao! Accetto l'invito per il Maradona! 🏟️💙\nEcco i miei dati per i biglietti:\n\n👤 *Nome:* ${nome}\n📅 *Nascita:* ${nascita}\n🪪 *Documento:* ${documento}`;
+    
+    // Codifica il testo per l'URL
+    const urlUrl = `https://wa.me/${tuoNumero}?text=${encodeURIComponent(testo)}`;
+    
+    // Apre WhatsApp
+    window.location.href = urlUrl;
+}
+</script>
+    </div>
+
+</body>
+</html>
